@@ -1,1 +1,1 @@
-worker: ./bin/InstaFollower
+worker: ./bin/instagram-bot
