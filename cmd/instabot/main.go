@@ -1,15 +1,14 @@
 package main
 
-import(
-bot "InstaFollower/internal/app/instabot"
-"log"
+import (
+	"InstaFollower/internal/instabot/bot"
 )
+import bot "InstaFollower/internal/instabot"
 
 func main() {
 	bot, err := bot.CreateBot()
 	if err != nil {
-		log.panic(err)
+		panic(err)
 	}
-
 	bot.Run()
 }
