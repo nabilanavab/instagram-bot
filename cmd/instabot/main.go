@@ -11,5 +11,5 @@ func main() {
 		log.Print(err)
 	}
 
-	bot.run()
+	bot.Run()
 }
