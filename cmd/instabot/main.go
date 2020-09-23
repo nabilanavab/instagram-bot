@@ -8,7 +8,7 @@ bot "InstaFollower/internal/app/instabot"
 func main() {
 	bot, err := bot.CreateBot()
 	if err != nil {
-		log.Panicf(err)
+		log.Panicln(err)
 	}
 
 	bot.Run()
