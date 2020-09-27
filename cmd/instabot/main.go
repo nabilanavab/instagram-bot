@@ -8,7 +8,8 @@ bot "InstaFollower/internal/app/instabot"
 func main() {
 	bot, err := telegram.CreateBot(os.Getenv("TELEGRAM_TOKEN"))
 	if err != nil {
-		log.panic(err)
+		log.print(err)
+		return
 	}
 
 	bot.Run()
