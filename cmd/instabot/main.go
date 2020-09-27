@@ -1,7 +1,7 @@
 package main
 
 import (
-	"InstaFollower/internal/instabot/bot"
+	"InstaFollower/internal/instabot/bot.go"
 	"InstaFollower/internal/instabot/utils"
 )
 
