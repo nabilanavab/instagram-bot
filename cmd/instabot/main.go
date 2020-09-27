@@ -1,24 +1,14 @@
 package main
 
-import (
-	"InstaFollower/internal/instabot/bot.go"
-	"InstaFollower/internal/instabot/utils"
+import(
+bot "InstaFollower/internal/app/instabot"
+"log"
 )
 
 func main() {
-	config := utils.CreateConfig()
-
-	db, err := db.CreateConnection(config.PostgresURI)
+	bot, err := bot.CreateBot()
 	if err != nil {
-		Print(err)
-		return
-	}
-	defer db.Disconnect()
-
-	bot, err := bot.CreateBot(config, db)
-	if err != nil {
-		Print(err)
-		return
+		log.panic(err)
 	}
 
 	bot.Run()
