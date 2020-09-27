@@ -2,7 +2,6 @@ package main
 
 import (
 	"InstaFollower/internal/instabot/bot"
-	"InstaFollower/internal/instabot/db"
 	"InstaFollower/internal/instabot/utils"
 )
 
