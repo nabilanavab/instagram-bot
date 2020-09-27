@@ -1,15 +1,23 @@
 package main
 
-import(
-bot "InstaFollower/internal/app/instabot"
-"log"
+import (
+	"InstaFollower/internal/instabot/bot"
+	"InstaFollower/internal/instabot/db"
+	"InstaFollower/internal/instabot/utils"
 )
 
 func main() {
-	bot, err := telegram.CreateBot(os.Getenv("TELEGRAM_TOKEN"))
+	config := utils.CreateConfig()
+
+	db, err := db.CreateConnection(config.PostgresURI)
 	if err != nil {
-		log.Print(err)
-		return
+		Print(err)
+	}
+	defer db.Disconnect()
+
+	bot, err := bot.CreateBot(config, db)
+	if err != nil {
+		Print(err)
 	}
 
 	bot.Run()
